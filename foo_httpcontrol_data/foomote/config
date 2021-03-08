@@ -1,0 +1,31 @@
+; FooMote template configuration file
+; 
+; check readme.txt for usage details
+;
+; *****************************
+; * START: DO NOT CHANGE THIS *
+;
+[foo_httpcontrol]
+url=/
+playlist_row=<td class="artist">%album artist%</td><td class="album">%album%</td><td class="tracknumber">%tracknumber%</td><td class="track">%title%</td><td class="length">%length%</td><td class="rating">%rating%</td>
+helper1=[%album artist% ]['['%album%[ CD%discnumber%][ #%tracknumber%]']' ]%title%[ '//' %track artist%]
+helper2=[%title%]
+helper3=[%title% ------- %artist% ------- %album%]
+;
+; *  END: DO NOT CHANGE THIS  *
+; *****************************
+;
+; *  CHANGEABLE VALUES BELOW  *
+;
+; Wildcards for album art files, separated by |
+albumart=$directory_path(%path%)\folder.jpg|$directory_path(%path%)\*.jpg
+; Default picture to show when no album art is found
+albumart_not_found=default/nocover.jpg
+; Default picture to show when the album art is requested but not available
+albumart_not_available=default/nocoverinfo.jpg
+; Limit of the size of an album art file (in bytes)
+albumart_limit_size=0
+; Set to 1 to prefer embedded album art over an externally received one
+albumart_prefer_embedded=0
+; Amount of playlist items on a playlist page (0 = no playlist generation)
+playlist_items_per_page=1000

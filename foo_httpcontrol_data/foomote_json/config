@@ -1,0 +1,29 @@
+; FooMote template configuration file
+; 
+; check readme.txt for usage details
+;
+; *****************************
+; * START: DO NOT CHANGE THIS *
+;
+[foo_httpcontrol]
+url=/
+playlist_row={ "artist": "$replace(%artist%,\,\\,",\")", "album": "$replace(%album%,\,\\,",\")", "title": "$replace(%title%,\,\\,",\")", "length": "%length_seconds%", "rating": "%rating%", "date": "%date%" }
+helper1="artist": "$replace(%artist%,\,\\,",\")", "album": "$replace(%album%,\,\\,",\")", "title": "$replace(%title%,\,\\,",\")"
+;
+; *  END: DO NOT CHANGE THIS  *
+; *****************************
+;
+; *  CHANGEABLE VALUES BELOW  *
+;
+; Wildcards for album art files, separated by |
+albumart=$directory_path(%path%)\folder.jpg|$directory_path(%path%)\*.jpg
+; Default picture to show when no album art is found
+albumart_not_found=foomote_json/img/nocover.jpg
+; Default picture to show when the album art is requested but not available
+albumart_not_available=foomote_json/img/nocover.jpg
+; Limit of the size of an album art file (in bytes)
+albumart_limit_size=0
+; Set to 1 to prefer embedded album art over an externally received one
+albumart_prefer_embedded=0
+; Amount of playlist items on a playlist page (0 = no playlist generation)
+playlist_items_per_page=1000
